@@ -21,6 +21,8 @@ def chk(x, A, D, E):
         if(tmp != Rules[rule]): return 0
     return 1
 
+### 上面絕大多數程式碼為網友 簡宏隆大大 所寫, 在此只是引用而已 ###
+
 def pList(sum, myList):
     tmpList = []
     for i in range(0, len(myList)-2):
