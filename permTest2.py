@@ -23,7 +23,7 @@ def chk(x, A, D, E):
 
 from functools import reduce
 
-allNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+allNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'T']
 
 def allRotated(list):
     def rotatedTo(i):
@@ -43,31 +43,26 @@ def pList(sum, myList):
     for i in range(0, len(myList)-2):
         for j in range(i+1, len(myList)-1):
             for k in range(j+1, len(myList)):
-                if myList[i]+myList[j]+myList[k] == sum:
+                if gp(myList[i])+gp(myList[j])+gp(myList[k]) == sum:
                     for list in perm([myList[i], myList[j], myList[k]]):
                         tmpList.append(list)
     return tmpList
-
-gp2 = lambda c : 'T' if c == 10 else str(c)
 
 # A+D+E=18
 listADE = pList(18, allNumbers)
 for ADE in listADE:
     remainNumbers = allNumbers.copy()
     A = ADE[0]
-    sA = gp2(A)
     D = ADE[1]
-    sD = gp2(D)
     E = ADE[2]
-    sE = gp2(E)
     for n in ADE:
         remainNumbers.remove(n)
-    remainNumberString = ''.join(map(str, remainNumbers)).replace('10','T')
+    remainNumberString = ''.join(map(str, remainNumbers))
     
-    pn = [z for z in list(permutations(remainNumberString)) if chk(z, sA, sD, sE)] # 全排列
+    pn = [z for z in list(permutations(remainNumberString)) if chk(z, A, D, E)] # 全排列
     if pn != []:
         pn = list(pn[0])
-        pn.insert(0, sA)
-        pn.insert(3, sD)
-        pn.insert(4, sE)
+        pn.insert(0, A)
+        pn.insert(3, D)
+        pn.insert(4, E)
         print(pn)
