@@ -51,7 +51,7 @@ def pList(sum, myList):
 gp2 = lambda c : 'T' if c == 10 else str(c)
 
 # A+D+E=18
-listADE = pList3(18, allNumbers)
+listADE = pList(18, allNumbers)
 for ADE in listADE:
     remainNumbers = allNumbers.copy()
     A = ADE[0]
