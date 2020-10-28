@@ -57,7 +57,7 @@ for ADE in listADE:
     E = ADE[2]
     for n in ADE:
         remainNumbers.remove(n)
-    remainNumberString = ''.join(map(str, remainNumbers))
+    remainNumberString = ''.join(remainNumbers)
     
     pn = [z for z in list(permutations(remainNumberString)) if chk(z, A, D, E)] # 全排列
     if pn != []:
