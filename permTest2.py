@@ -21,6 +21,8 @@ def chk(x, A, D, E):
         if(tmp != Rules[rule]): return 0
     return 1
 
+### 上面程式碼為網友 簡宏隆大大 所寫, 在此只是引用而已 ###
+
 from functools import reduce
 
 allNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'T']
